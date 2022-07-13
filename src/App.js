@@ -1,7 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 function App() {
+  function getBackend() {
+    axios.get('/something').then(function(response) {
+      console.log(response);
+    });
+  }
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +24,7 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={ getBackend }>Click Me!</button>
       </header>
     </div>
   );
